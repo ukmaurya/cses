@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long 
+// hashing will given wrong answer because of mod , it ahould be only used to compare the equality not > or <
+ // example 21 < 28 but after mod 25    21%25 > 28%25
+int main() {
+    string s;
+    cin >> s;
+    int n = s.size();
+    string str = s + s; // Concatenate string with itself
+
+    int prime = 31;
+    int mod = 1e9 + 7;
+    ll hash = 0;
+    vector<ll> power(n + 1);
+    power[0] = 1;
+
+    // Calculate powers of prime
+    for (int i = 1; i <= n; i++) {
+        power[i] = (power[i - 1] * prime) % mod;
+    }
+
+    // Calculate initial hash of the first n characters
+    for (int i = 0; i < n; i++) {
+        hash = (hash * prime + s[i]) % mod;
+    }
+
+    ll min_hash = hash;
+    int min_index = 0;
+
+    // Slide over the concatenated string to find minimal rotation
+    for (int i = 1; i < n; i++) {
+        // Update the hash to the next rotation
+        hash = (hash - s[i - 1] * power[n - 1] % mod + mod) % mod;
+        hash = (hash * prime + str[i + n - 1]) % mod;
+
+        // Check if current hash is smaller
+        if (hash < min_hash) {
+            min_hash = hash;
+            min_index = i;
+        }
+    }
+
+    cout << str.substr(min_index, n) << endl;
+    return 0;
+}

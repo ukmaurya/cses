@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/ukm/Documents/cses/maths/HackerDecryptingMessages'
+relocations:
+  - { offsetInCU: 0x16CD0, offset: 0x16CD0, size: 0x8, addend: 0x0, symName: __ZStL8__ioinit, symObjAddr: 0x64E38, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offsetInCU: 0x16DCD, offset: 0x16DCD, size: 0x8, addend: 0x0, symName: __ZL3mod, symObjAddr: 0x2B8, symBinAddr: 0x100003E9C, symSize: 0x0 }
+  - { offsetInCU: 0x16F8B, offset: 0x16F8B, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x218, symBinAddr: 0x100003D54, symSize: 0xA0 }
+  - { offsetInCU: 0x16FCB, offset: 0x16FCB, size: 0x8, addend: 0x0, symName: __Z8dividingxx, symObjAddr: 0x184, symBinAddr: 0x100003CC0, symSize: 0x94 }
+  - { offsetInCU: 0x17003, offset: 0x17003, size: 0x8, addend: 0x0, symName: __Z3mulxxx, symObjAddr: 0xC4, symBinAddr: 0x100003C00, symSize: 0xC0 }
+  - { offsetInCU: 0x17076, offset: 0x17076, size: 0x8, addend: 0x0, symName: __Z20binaryExponentiationxxi, symObjAddr: 0x0, symBinAddr: 0x100003B3C, symSize: 0xC4 }
+...
